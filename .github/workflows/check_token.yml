@@ -16,6 +16,6 @@ jobs:
       - name: "Check token"
         env:
           WARN_IF_WITHIN_DAYS: 7
-          GITHUB_TOKEN: {{ secrets.$TOKEN_SECRET }}  # will that work?
+          GITHUB_TOKEN: {{ secrets[matrix.TOKEN_SECRET] }}  # will that work?
         run: |
           echo $TOKEN_SECRET
