@@ -69,8 +69,8 @@ jobs:
               pass "Could not get expiration for this token (doesn't expire?)"
           fi
 
-          EXP_EPOCH=$(date -jf "%Y-%m-%d %H:%M:%S" "$EXP_DATE" "+%s")  # macOS
-          #EXP_EPOCH=$(date -d $EXP_DATE "+%s")  # linux (gnu date)
+          #EXP_EPOCH=$(date -jf "%Y-%m-%d %H:%M:%S" "$EXP_DATE" "+%s")  # macOS
+          EXP_EPOCH=$(date -d $EXP_DATE "+%s")  # linux (gnu date)
           NOW=$(date "+%s")
 
           EXP_TXT=$(echo $EXP_DATE | cut -d " " -f 1)
