@@ -1,0 +1,21 @@
+name: Check GitHub tokens
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  check-token:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        TOKEN_SECRET:
+          - "GOOD_TOKEN"
+          - "BAD_TOKEN"
+    steps:
+      - name: "Check token"
+        env:
+          WARN_IF_WITHIN_DAYS: 7
+          GITHUB_TOKEN: {{ secrets.$TOKEN_SECRET }}  # will that work?
+        run: |
+          echo $TOKEN_SECRET
