@@ -30,7 +30,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets[matrix.TOKEN_SECRET] }}  # will that work?
         shell: bash -l {0}
         run: |
-          date --help
           # output conveniences
           function color_line() {
               text=$1
@@ -71,7 +70,7 @@ jobs:
           fi
 
           #EXP_EPOCH=$(date -jf "%Y-%m-%d %H:%M:%S" "$EXP_DATE" "+%s")  # macOS
-          EXP_EPOCH=$(date -d $EXP_DATE "+%s")  # linux (gnu date)
+          EXP_EPOCH=$(date -d $EXP_DATE +"%s")  # linux (gnu date)
           NOW=$(date "+%s")
 
           EXP_TXT=$(echo $EXP_DATE | cut -d " " -f 1)
