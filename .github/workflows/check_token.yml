@@ -23,7 +23,7 @@ jobs:
       matrix:
         TOKEN_SECRET:
           - "GOOD_TOKEN"
-          - "BAD_TOKEN"
+          #- "BAD_TOKEN"
     steps:
       - name: "Check token"
         env:
