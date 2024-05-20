@@ -1,7 +1,9 @@
 name: Check GitHub tokens
 # This is a workflow to check your GitHub Personal Access Tokens (as kept in
 # GitHub secrets), and to warn you if a token is nearing its expiration
-# date.
+# date. Fully self-contained: requires no installation or external actions
+# beyond what is in the default runner environment. Your secrets are not
+# passed anywhere.
 # 
 # Usage: 
 # 1. Add this to your repository's .github/workflows directory.
